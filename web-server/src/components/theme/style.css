@@ -1,0 +1,22 @@
+/* 
+ * Purpose:
+ * Assign height: "100%" to
+ * html, body, #___gatsby &  
+ * div with role="group"
+*/
+
+html, body, #___gatsby {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+}
+
+div[tabindex] {
+  height: 100%;
+}
+
+div[role="group"][tabindex] {
+  height: 100%;
+}
