@@ -1,8 +1,8 @@
-# Whatchu Merchant
+# BIM Thinker
 *This READ ME file is for Mac OS X setup. Windows setup to follow soon.*
 
 ## Pre-requisities
-* [Gatsby] (https://www.gatsbyjs.org/tutorial/)
+* [Gatsby](https://www.gatsbyjs.org/tutorial/)
 * [Golang](https://golang.org/dl/) version 10 or higher
 * [dep](https://golang.github.io/dep/docs/installation.html), tool to manage GO dependencies, similar to npm.
 * [Node](https://nodejs.org/en/) version 10 or higher
