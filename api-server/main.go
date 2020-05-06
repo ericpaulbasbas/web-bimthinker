@@ -46,6 +46,7 @@ func main() {
 
 	router := mux.NewRouter()
 
+	router.HandleFunc("/", welcome).Methods("GET")
 	router.HandleFunc("/models", getModels).Methods("GET")
 	router.HandleFunc("/models", createModel).Methods("POST")
 	router.HandleFunc("/models/{id}", getModel).Methods("GET")
@@ -65,20 +66,13 @@ func main() {
 	http.ListenAndServe(":8001", corsHandler(router))
 }
 
+func welcome(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Welcome to BIM thinker API")
+}
+
 func download(w http.ResponseWriter, r *http.Request) {
-	// fmt.Println("1")
-	// w.Header().Set("Content-Disposition", "attachment; filename=sql_format.nlx")
-	// fmt.Println("2")
-	// // w.Header().Set("Content-Type", r.Header.Get("Content-Type"))
-	// w.Header().Add("Content-Type", r.Header.Get("Content-Type"))
-	// fmt.Println("3")
-	// // w.Header().Set("X-Suggested-Filename", "sql_format.nlx")
 	w.Header().Set("X-Suggested-Filename", "sample_model.rfa")
-	// fmt.Println("4")
 	http.ServeFile(w, r, "../web-server_02/src/models/sample_model.rfa")
-	// fmt.Print("test download")
-	// fmt.Fprintln(w, "Welcome!")
-	// fmt.Print("test download after")
 }
 
 func login(w http.ResponseWriter, r *http.Request) {
