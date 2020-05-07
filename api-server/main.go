@@ -63,7 +63,7 @@ func main() {
 		handlers.AllowedMethods([]string{"GET", "HEAD", "POST", "PUT", "DELETE"}),
 	)
 
-	http.ListenAndServe(":80", corsHandler(router))
+	http.ListenAndServe(":8001", corsHandler(router))
 }
 
 func welcome(w http.ResponseWriter, r *http.Request) {
