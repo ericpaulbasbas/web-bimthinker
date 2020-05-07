@@ -38,7 +38,7 @@ var db *sql.DB
 var err error
 
 func main() {
-	db, err = sql.Open("mysql", "root:bimthinkerdb@/bimthinker")
+	db, err = sql.Open("mysql", "root:@/bimthinker")
 	if err != nil {
 		panic(err.Error())
 	}
@@ -72,7 +72,7 @@ func welcome(w http.ResponseWriter, r *http.Request) {
 
 func download(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("X-Suggested-Filename", "sample_model.rfa")
-	http.ServeFile(w, r, "../web-server_02/src/models/sample_model.rfa")
+	http.ServeFile(w, r, "../web-server/src/models/sample_model.rfa")
 }
 
 func login(w http.ResponseWriter, r *http.Request) {
