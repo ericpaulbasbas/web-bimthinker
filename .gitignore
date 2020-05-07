@@ -19,3 +19,6 @@ whatchu-merchant-api
 debug
 
 .idea/
+web-server/.firebase/hosting.cHVibGlj.cache
+api-server/api-server
+web-server/public/index.html

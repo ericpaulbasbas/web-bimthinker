@@ -46,15 +46,15 @@ func main() {
 
 	router := mux.NewRouter()
 
-	router.HandleFunc("/", welcome).Methods("GET")
-	router.HandleFunc("/models", getModels).Methods("GET")
-	router.HandleFunc("/models", createModel).Methods("POST")
-	router.HandleFunc("/models/{id}", getModel).Methods("GET")
-	router.HandleFunc("/models/{id}", updateModel).Methods("PUT")
-	router.HandleFunc("/models/{id}", deleteModel).Methods("DELETE")
-	router.HandleFunc("/login", login).Methods("POST")
-	router.HandleFunc("/categories", getCategories).Methods("GET")
-	router.HandleFunc("/download", download).Methods("GET")
+	router.HandleFunc("/bimthinker", welcome).Methods("GET")
+	router.HandleFunc("/bimthinker/models", getModels).Methods("GET")
+	router.HandleFunc("/bimthinker/models", createModel).Methods("POST")
+	router.HandleFunc("/bimthinker/models/{id}", getModel).Methods("GET")
+	router.HandleFunc("/bimthinker/models/{id}", updateModel).Methods("PUT")
+	router.HandleFunc("/bimthinker/models/{id}", deleteModel).Methods("DELETE")
+	router.HandleFunc("/bimthinker/login", login).Methods("POST")
+	router.HandleFunc("/bimthinker/categories", getCategories).Methods("GET")
+	router.HandleFunc("/bimthinker/download", download).Methods("GET")
 
 	corsHandler := handlers.CORS(
 		handlers.AllowedOrigins([]string{"*"}),
@@ -63,7 +63,7 @@ func main() {
 		handlers.AllowedMethods([]string{"GET", "HEAD", "POST", "PUT", "DELETE"}),
 	)
 
-	http.ListenAndServe(":8001", corsHandler(router))
+	http.ListenAndServe(":80", corsHandler(router))
 }
 
 func welcome(w http.ResponseWriter, r *http.Request) {
