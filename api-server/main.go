@@ -38,7 +38,7 @@ var db *sql.DB
 var err error
 
 func main() {
-	db, err = sql.Open("mysql", "root:@/bimthinker")
+	db, err = sql.Open("mysql", "root:bimthinkerdb@/bimthinker")
 	if err != nil {
 		panic(err.Error())
 	}
